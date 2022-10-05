@@ -10,27 +10,22 @@ public class CallBackDemo {
     public static void main(String[] args) throws InterruptedException {
         log.info("Main Thread is running");
 
-        Runnable runnable = new Runnable() {
+        Runnable runnable = () -> new CallBackDemo().runningAsync(new CallBack() {
             @Override
-            public void run() {
-                new CallBackDemo().runningAsync(new CallBack() {
-                    @Override
-                    public void pushComplete() {
-                        log.info("Callback done!");
-                    }
-
-                    @Override
-                    public void pushData(String data) {
-                        log.info("Callback data: " + data);
-                    }
-
-                    @Override
-                    public void pushError(Exception exception) {
-                        log.error("Callback Error called, Got an exception: " + exception);
-                    }
-                });
+            public void pushComplete() {
+                log.info("Callback done!");
             }
-        };
+
+            @Override
+            public void pushData(String data) {
+                log.info("Callback data: " + data);
+            }
+
+            @Override
+            public void pushError(Exception exception) {
+                log.error("Callback Error called, Got an exception: " + exception);
+            }
+        });
 
         Thread thread = new Thread(runnable);
         thread.start();
