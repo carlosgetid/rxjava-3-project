@@ -1,4 +1,4 @@
-package com.cpgp.reactive.rxjava3project.fundamentals;
+package com.cpgp.reactive.rxjava3project.fundamentals.callbackhell;
 
 import lombok.extern.slf4j.Slf4j;
 
