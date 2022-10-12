@@ -11,10 +11,16 @@ public class Variants {
         Observable<String> observable = Observable
                 .just("Alex", "Justin", "Jack");
 
-        observable.first("Name")
+        Observable<String> emptyObservable = Observable
+                .empty();
+
+        emptyObservable.first("Name")
                 .subscribe(e -> log.info(e));
 
-        Single.just("Alex")
-                .subscribe(e -> log.info(e));
+        emptyObservable.firstElement()
+                .subscribe(log::info,
+                        Throwable::printStackTrace,
+                        () -> log.info("Completed"));
+
     }
 }
