@@ -1,5 +1,6 @@
 package com.cpgp.reactive.rxjava3project.observablevariants;
 
+import io.reactivex.rxjava3.core.Completable;
 import io.reactivex.rxjava3.core.Observable;
 import io.reactivex.rxjava3.core.Single;
 import lombok.extern.slf4j.Slf4j;
@@ -8,19 +9,16 @@ import lombok.extern.slf4j.Slf4j;
 public class Variants {
 
     public static void main(String[] args) {
-        Observable<String> observable = Observable
-                .just("Alex", "Justin", "Jack");
+        Completable completable = Completable.complete();
+        completable.subscribe(()-> log.info("Completed"));
 
-        Observable<String> emptyObservable = Observable
-                .empty();
+        Completable
+                .fromRunnable(() -> log
+                        .info("Some process executing"))
+                .subscribe(() -> log
+                        .info("The process executed successfully"));
 
-        emptyObservable.first("Name")
-                .subscribe(e -> log.info(e));
 
-        emptyObservable.firstElement()
-                .subscribe(log::info,
-                        Throwable::printStackTrace,
-                        () -> log.info("Completed"));
 
     }
 }
