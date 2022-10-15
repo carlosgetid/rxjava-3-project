@@ -14,11 +14,11 @@ public class Disposing {
 
         log.info("Main thread starts");
 
-        Disposable disposable = observable.subscribe(e -> log.info("Observer 1: {}", e));
+        observable.subscribe(e -> log.info("Observer 1: {}", e)).dispose();
 
-        TimeUnit.SECONDS.sleep(5);
-
-        disposable.dispose();
+//        TimeUnit.SECONDS.sleep(5);
+//
+//        disposable.dispose();
 
         observable.subscribe(e -> log.info("Observer 2: {}", e));
 
