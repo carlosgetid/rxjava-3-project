@@ -86,6 +86,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Disposing" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.cpgp.reactive.rxjava3project.disposing.Disposing" />
+      <module name="rxjava-3-project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.cpgp.reactive.rxjava3project.disposing.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ObserverDesignPattern" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.cpgp.reactive.rxjava3project.fundamentals.observerdesingpattern.ObserverDesignPattern" />
       <module name="rxjava-3-project" />
@@ -131,6 +144,7 @@
         <item itemvalue="Application.com.cpgp.reactive.rxjava3project.fundamentals.pushvspull.CallBackDemo" />
         <item itemvalue="Application.com.cpgp.reactive.rxjava3project.fundamentals.callbackhell.CallBackDemo" />
         <item itemvalue="Application.CallBackDemo" />
+        <item itemvalue="Application.Disposing" />
       </list>
     </recent_temporary>
   </component>
